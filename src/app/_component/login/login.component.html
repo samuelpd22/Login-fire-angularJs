@@ -1,0 +1,68 @@
+<div class="login-page">
+    <div class="login-container">
+      <div class="login-header">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWbqY1sGE7KMrM6uFUDrvW3hxtFYe6Ois_Uw&s" alt="Logo" class="logo">
+        <h2>Bem-vindo de volta!</h2>
+        <p class="subtitle">Entre com suas credenciais para acessar</p>
+      </div>
+  
+      <form (submit)="onLogin()" class="login-form">
+        <div class="form-group">
+          <label for="email">Email</label>
+          <div class="input-container">
+            <i class="fas fa-envelope"></i>
+            <input 
+              id="email" 
+              type="email" 
+              [(ngModel)]="email" 
+              name="email" 
+              required 
+              placeholder="exemplo@email.com"
+              class="form-input"
+            />
+          </div>
+        </div>
+  
+        <div class="form-group">
+          <div class="password-header">
+            <label for="password">Senha</label>
+            <a  class="forgot-password" (click)="EsqueceuSenha()">Esqueceu a senha?</a>
+          </div>
+          <div class="input-container">
+            <i class="fas fa-lock"></i>
+            <input 
+              id="password" 
+              type="password" 
+              [(ngModel)]="password" 
+              name="password" 
+              required 
+              placeholder="Digite sua senha"
+              class="form-input"
+            />
+          </div>
+        </div>
+  
+        <div class="remember-me">
+          <label class="checkbox-container">
+            <input type="checkbox">
+            <span class="checkmark"></span>
+            Lembrar-me
+          </label>
+        </div>
+  
+       
+  
+        <button type="submit" class="btn-login">
+          <span>Entrar</span>
+          <i class="fas fa-arrow-right"></i>
+        </button>
+  
+        <div class="register-prompt">
+          <p>Não tem uma conta?</p>
+          <button type="button" class="btn-register" (click)="onRegisterClick()">
+            Criar conta
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>

@@ -1,0 +1,393 @@
+/* styles.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #F0F4F8;
+    color: #2D3748;
+}
+
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    width: 260px;
+    background-color: #FFFFFF;
+    border-right: 1px solid #E2E8F0;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    height: 100vh;
+    transition: transform 0.3s ease;
+    z-index: 1000;
+}
+
+.sidebar-header {
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #E2E8F0;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+}
+
+.brand-name {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.sidebar-nav {
+    flex: 1;
+    padding: 1rem 0;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    padding: 0.875rem 1.5rem;
+    color: #718096;
+    text-decoration: none;
+    gap: 1rem;
+    transition: all 0.3s ease;
+}
+
+.nav-item:hover {
+    background-color: #F0F4F8;
+    color: #FF8E3C;
+}
+
+.nav-item.active {
+    background-color: #FFF5EB;
+    color: #FF8E3C;
+}
+
+.nav-item i {
+    width: 20px;
+}
+
+.sidebar-footer {
+    padding: 1rem 1.5rem;
+    border-top: 1px solid #E2E8F0;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.user-details {
+    flex: 1;
+}
+
+.user-name {
+    font-weight: 500;
+    font-size: 0.875rem;
+}
+
+.user-email {
+    color: #718096;
+    font-size: 0.75rem;
+}
+
+/* Main Content Styles */
+.main-content {
+    flex: 1;
+    margin-left: 260px;
+    min-height: 100vh;
+}
+
+.top-header {
+    height: 70px;
+    background-color: #FFFFFF;
+    border-bottom: 1px solid #E2E8F0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1.5rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.action-button {
+    background: none;
+    border: none;
+    color: #718096;
+    cursor: pointer;
+    padding: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.action-button:hover {
+    color: #2D3748;
+}
+
+.dashboard-content {
+    padding: 1.5rem;
+}
+
+/* Stats Grid */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.stats-card {
+    background-color: #FFFFFF;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.stats-card h3 {
+    color: #718096;
+    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
+}
+
+.stats-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.stats-value {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.stats-change {
+    font-size: 0.875rem;
+}
+
+.stats-change.positive {
+    color: #38A169;
+}
+
+/* Chart Section */
+.chart-section {
+    background-color: #FFFFFF;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    margin-bottom: 1.5rem;
+}
+
+.chart-section h2 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.chart-container {
+    height: 300px;
+}
+
+/* Activity Section */
+.activity-section {
+    background-color: #FFFFFF;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.activity-section h2 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.activity-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.activity-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.5rem 0;
+}
+
+.activity-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.activity-text {
+    font-size: 0.875rem;
+    margin-bottom: 0.25rem;
+}
+
+.activity-time {
+    font-size: 0.75rem;
+    color: #718096;
+}
+
+/* Toggle Button */
+.toggle-button {
+    background: none;
+    border: none;
+    color: #718096;
+    cursor: pointer;
+    padding: 0.5rem;
+    display: none;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    .sidebar {
+        transform: translateX(-100%);
+    }
+
+    .sidebar.active {
+        transform: translateX(0);
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+
+    .toggle-button {
+        display: block;
+    }
+}
+
+@media (max-width: 768px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-content {
+        padding: 1rem;
+    }
+}
+/* Adding to the existing CSS file - these are just the modified/new parts */
+
+/* Modified sidebar styles for toggle functionality */
+.sidebar {
+    width: 260px;
+    background-color: #FFFFFF;
+    border-right: 1px solid #E2E8F0;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    height: 100vh;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+/* New class for collapsed sidebar */
+.sidebar.collapsed {
+    width: 70px;
+}
+
+.sidebar.collapsed .brand-name,
+.sidebar.collapsed .user-details,
+.sidebar.collapsed .nav-item span {
+    display: none;
+}
+
+.sidebar.collapsed .nav-item {
+    padding: 0.875rem;
+    justify-content: center;
+}
+
+.sidebar.collapsed .user-info {
+    justify-content: center;
+}
+
+/* Modified main content styles for toggle */
+.main-content {
+    flex: 1;
+    margin-left: 260px;
+    min-height: 100vh;
+    transition: margin-left 0.3s ease;
+}
+
+.main-content.expanded {
+    margin-left: 70px;
+}
+
+/* Modified toggle button styles */
+.toggle-button {
+    background: none;
+    border: none;
+    color: #718096;
+    cursor: pointer;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+.toggle-button:hover {
+    color: #2D3748;
+}
+
+.toggle-button i {
+    transition: transform 0.3s ease;
+}
+
+.toggle-button.rotated i {
+    transform: rotate(180deg);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .sidebar {
+        transform: translateX(-100%);
+    }
+
+    .sidebar.active {
+        transform: translateX(0);
+        width: 260px;
+    }
+
+    .sidebar.active .brand-name,
+    .sidebar.active .user-details,
+    .sidebar.active .nav-item span {
+        display: block;
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+
+    .main-content.expanded {
+        margin-left: 0;
+    }
+}

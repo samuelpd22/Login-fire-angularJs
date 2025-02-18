@@ -1,0 +1,178 @@
+<div class="profile-page" *ngIf="userProfile; else loading">
+  <div class="profile-container">
+    <div class="profile-header">
+      <div class="profile-pic-container">
+        <img
+          [src]="userProfile.fotoPerfil ? 'http://localhost:3330/uploads/' + userProfile.fotoPerfil : 'default-profile-pic.png'"
+          alt="Foto do perfil"
+          class="profile-pic"
+        />
+        
+        <!-- Input de arquivo escondido -->
+        <input
+          type="file"
+          #fileInput
+          (change)="onFileSelected($event)"
+          style="display: none;"
+        />
+      </div>
+      
+      <!-- Botão para abrir o explorador -->
+      <button class="btn-add-photo" (click)="triggerFileInput()">
+        <i class="fas fa-camera"></i> Adicionar/Alterar Foto
+      </button>
+      <h2>Meu Perfil</h2>
+      <p class="subtitle">Atualize suas informações pessoais</p>
+    </div>
+
+    <form (submit)="onUpdateProfile(profileForm.value)" #profileForm="ngForm" class="profile-form">
+      <!-- Nome -->
+      <div class="form-group">
+        <label for="name">Nome Completo</label>
+        <div class="input-container">
+          <i class="fas fa-user"></i>
+          <input
+            id="name"
+            type="text"
+            name="name"
+            required
+            placeholder="Seu nome completo"
+            class="form-input"
+            [(ngModel)]="userProfile.name" 
+          />
+        </div>
+      </div>
+
+      <!-- Idade -->
+      <div class="form-group">
+        <label for="age">Idade</label>
+        <div class="input-container">
+          <i class="fas fa-birthday-cake"></i>
+          <input
+            id="age"
+            type="number"
+            name="age"
+            required
+            placeholder="Sua idade"
+            class="form-input"
+            [(ngModel)]="userProfile.idade"
+          />
+        </div>
+      </div>
+
+      <!-- Email -->
+      <div class="form-group">
+        <label for="email">Email</label>
+        <div class="input-container">
+          <i class="fas fa-envelope"></i>
+          <input
+            id="email"
+            type="email"
+            name="email"
+            required
+            placeholder="exemplo@email.com"
+            class="form-input"
+            [(ngModel)]="userProfile.email"
+          />
+        </div>
+      </div>
+
+      <!-- Estado Civil -->
+      <div class="form-group">
+        <label for="maritalStatus">Estado Civil</label>
+        <select
+          id="maritalStatus"
+          name="maritalStatus"
+          required
+          class="form-input"
+          [(ngModel)]="userProfile.estadoCivil" 
+        >
+          <option value="" disabled selected>Selecione</option>
+          <option value="solteiro">Solteiro</option>
+          <option value="casado">Casado</option>
+          <option value="outro">Outro</option>
+        </select>
+      </div>
+
+      <!-- Endereço -->
+      <div class="form-group">
+        <label for="address">Endereço</label>
+        <div class="input-container">
+          <i class="fas fa-map-marker-alt"></i>
+          <input
+            id="address"
+            type="text"
+            name="address"
+            required
+            placeholder="Ex.: Rua das Flores, 123"
+            class="form-input"
+            [(ngModel)]="userProfile.endereco" 
+          />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="address">Logradouro</label>
+        <div class="input-container">
+          <i class="fas fa-map-marker-alt"></i>
+          <input
+            id="address"
+            type="text"
+            name="address"
+            required
+            placeholder="Ex.: Rua das Flores, 123"
+            class="form-input"
+            [(ngModel)]="userProfile.logradouro" 
+          />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="address">Número</label>
+        <div class="input-container">
+          <i class="fas fa-map-marker-alt"></i>
+          <input
+            id="numero"
+            type="text"
+            name="numero"
+            required
+            placeholder="103 AP 202"
+            class="form-input"
+            [(ngModel)]="userProfile.numero" 
+          />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="address">Estado</label>
+        <div class="input-container">
+          <i class="fas fa-map-marker-alt"></i>
+          <input
+            id="estado"
+            type="text"
+            name="estado"
+            required
+            placeholder="Minas Gerais"
+            class="form-input"
+            [(ngModel)]="userProfile.estado" 
+          />
+        </div>
+      </div>
+
+      <!-- Botão de Atualizar Perfil -->
+      <button type="submit" class="btn-update">
+        <span>Atualizar Perfil</span>
+        <i class="fas fa-save"></i>
+      </button>
+    </form>
+  </div>
+</div>
+
+<ng-template #loading>
+  <p>Carregando...</p>
+</ng-template>
+
+<!-- Mensagem de erro -->
+<div *ngIf="errorMessage" class="error-message">
+  <p>{{ errorMessage }}</p> <!-- Exibe mensagem de erro se houver -->
+</div>

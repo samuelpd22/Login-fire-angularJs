@@ -1,0 +1,111 @@
+<div class="login-page">
+    <div class="login-container" *ngIf="!showVerificationCode">
+      <div class="login-header">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWbqY1sGE7KMrM6uFUDrvW3hxtFYe6Ois_Uw&s" alt="Logo" class="logo">
+        <h2>Recuperar Senha</h2>
+        <p class="subtitle">Digite seu email para receber as instruções de recuperação</p>
+      </div>
+  
+      <form (submit)="onSendCode($event)" class="login-form">
+        <div class="form-group">
+          <label for="email">Email</label>
+          <div class="input-container">
+            <i class="fas fa-envelope"></i>
+            <input 
+              id="email" 
+              type="email" 
+              [(ngModel)]="email" 
+              name="email" 
+              required 
+              placeholder="exemplo@email.com"
+              class="form-input"
+            />
+          </div>
+        </div>
+      
+        <button type="submit" class="btn-login">
+          <span>Enviar instruções</span>
+          <i class="fas fa-paper-plane"></i>
+        </button>
+      
+        <div class="register-prompt">
+          <p>Lembrou sua senha?</p>
+          <button type="button" class="btn-register" (click)="onLoginClick()">
+            Voltar ao login
+          </button>
+        </div>
+      </form>
+    </div>
+     
+    <!-- Tela de Verificação de Código -->
+
+    <!--
+    <div class="login-container" *ngIf="showVerificationCode">
+      <div class="login-header">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWbqY1sGE7KMrM6uFUDrvW3hxtFYe6Ois_Uw&s" alt="Logo" class="logo">
+        <h2>Verificar Código</h2>
+        <p class="subtitle">Digite o código de verificação enviado para seu email</p>
+      </div>
+
+      <form (submit)="onVerifyCode()" class="login-form">
+        <div class="code-inputs">
+          <input 
+            type="text" 
+            class="code-input" 
+            maxlength="1" 
+            [(ngModel)]="code1" 
+            name="code1" 
+            #firstInput
+            (keyup)="onCodeInput($event, 1)"
+            required
+          >
+          <input 
+            type="text" 
+            class="code-input" 
+            maxlength="1" 
+            [(ngModel)]="code2" 
+            name="code2"
+            (keyup)="onCodeInput($event, 2)"
+            required
+          >
+          <input 
+            type="text" 
+            class="code-input" 
+            maxlength="1" 
+            [(ngModel)]="code3" 
+            name="code3"
+            (keyup)="onCodeInput($event, 3)"
+            required
+          >
+          <input 
+            type="text" 
+            class="code-input" 
+            maxlength="1" 
+            [(ngModel)]="code4" 
+            name="code4"
+            (keyup)="onCodeInput($event, 4)"
+            required
+          >
+        </div>
+
+        <div class="resend-code">
+          <p>Não recebeu o código?</p>
+          <button type="button" class="btn-resend" (click)="onResendCode()">
+            Reenviar código
+          </button>
+        </div>
+
+        <button type="submit" class="btn-login">
+          <span>Verificar código</span>
+          <i class="fas fa-check"></i>
+        </button>
+
+        <div class="register-prompt">
+          <button type="button" class="btn-register" (click)="onBackToEmail()">
+            Voltar
+          </button>
+        </div>
+      </form>
+    </div>
+</div>
+-->

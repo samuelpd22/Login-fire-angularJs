@@ -1,0 +1,300 @@
+.profile-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    padding: 20px;
+  }
+  
+  .profile-container {
+    width: 100%;
+    max-width: 900px;
+    background: #FFFFFF;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
+  
+  .profile-header {
+    text-align: center;
+    margin-bottom: 32px;
+  }
+  
+  .profile-pic {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 20px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .profile-pic:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  }
+  
+  .profile-header h2 {
+    font-size: 28px;
+    color: #2D3748;
+    margin-bottom: 10px;
+    font-weight: 600;
+  }
+  
+  .subtitle {
+    color: #718096;
+    font-size: 15px;
+  }
+  
+  .form-group {
+    margin-bottom: 24px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #2D3748;
+    font-weight: 500;
+    font-size: 15px;
+  }
+  
+  .input-container {
+    position: relative;
+    width: 100%;
+  }
+  
+  .input-container i {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #718096;
+    font-size: 18px;
+  }
+  
+  .form-input {
+    width: 100%;
+    padding: 14px 14px 14px 45px;
+    border: 2px solid #E2E8F0;
+    border-radius: 12px;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    background-color: #F0F4F8;
+    color: #2D3748;
+  }
+  
+  .form-input::placeholder {
+    color: #718096;
+  }
+  
+  .form-input:focus {
+    border-color: #FF8E3C;
+    background-color: #FFFFFF;
+    box-shadow: 0 0 0 4px rgba(255, 142, 60, 0.1);
+    outline: none;
+  }
+  
+  .btn-update {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(45deg, #FF8E3C, #FF7A1F);
+    color: #FFFFFF;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .btn-update:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 142, 60, 0.2);
+  }
+  
+  @media (max-width: 480px) {
+    .profile-container {
+      padding: 30px 20px;
+    }
+  
+    .profile-header h2 {
+      font-size: 24px;
+    }
+  
+    .btn-update {
+      padding: 12px;
+    }
+  }
+  .btn-add-photo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #FF8E3C;
+    color: #FFFFFF;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    gap: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .btn-add-photo i {
+    font-size: 16px;
+  }
+  
+  .btn-add-photo:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 142, 60, 0.2);
+  }
+  
+  .profile-container {
+    width: 100%;
+    max-width: 520px; /* Increased for additional fields */
+  }
+  
+  .form-group {
+    margin-bottom: 24px;
+  }
+  
+  select.form-input {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: #F0F4F8 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="%23718096" viewBox="0 0 24 24" width="24" height="24"><path d="M7 10l5 5 5-5z"/></svg>') no-repeat right 10px center;
+    background-size: 16px;
+  }
+  
+
+  //gpt
+  .profile-pic-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    position: relative;
+  }
+  
+  .profile-pic {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+    border: 3px solid #FF8E3C;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .profile-pic:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  }
+  
+
+  //
+
+
+  @media (min-width: 768px) {
+    .profile-form {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px 30px; /* 20px vertical, 30px horizontal */
+    }
+
+    /* Reset do margin-bottom no grid */
+    .form-group {
+        margin-bottom: 0;
+    }
+
+    /* Último elemento (botão) ocupa linha inteira */
+    .profile-form > :last-child {
+        grid-column: 1 / -1;
+        margin-top: 24px;
+    }
+}
+
+/* Melhorias visuais nos inputs */
+.form-input {
+    width: 100%;
+    padding: 14px 14px 14px 45px;
+    border: 2px solid #E2E8F0;
+    border-radius: 12px;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    background-color: #F0F4F8;
+    color: #2D3748;
+    height: 50px; /* Altura fixa para uniformidade */
+}
+
+.form-input:focus {
+    border-color: #FF8E3C;
+    background-color: #FFFFFF;
+    box-shadow: 0 0 0 4px rgba(255, 142, 60, 0.1);
+    outline: none;
+}
+
+/* Ajuste nos labels para melhor alinhamento */
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #2D3748;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+/* Ajuste no ícone dentro do input */
+.input-container i {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #718096;
+    font-size: 18px;
+    pointer-events: none; /* Evita interferência com o input */
+}
+
+/* Ajuste no select para manter consistência */
+select.form-input {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding-right: 40px; /* Espaço para o ícone de seta */
+    background: #F0F4F8 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="%23718096" viewBox="0 0 24 24" width="24" height="24"><path d="M7 10l5 5 5-5z"/></svg>') no-repeat right 10px center;
+    background-size: 16px;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    .profile-container {
+        padding: 30px 20px;
+        max-width: 520px;
+    }
+
+    .form-group {
+        margin-bottom: 24px;
+    }
+
+    .profile-form {
+        display: block;
+    }
+}
+
+/* Ajuste na mensagem de erro */
+.error-message {
+    margin-top: 20px;
+    padding: 12px;
+    border-radius: 8px;
+    background-color: #FEE2E2;
+    color: #DC2626;
+    text-align: center;
+}
