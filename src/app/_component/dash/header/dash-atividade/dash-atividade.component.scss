@@ -1,190 +1,85 @@
-/* expense-tracker.component.scss */
-.expense-tracker {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-    font-family: Arial, sans-serif;
-  
-    .card {
-      background: #ffffff;
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      padding: 20px;
-      margin-bottom: 20px;
-  
-      .card-header {
-        margin-bottom: 20px;
-        
-        h2 {
-          font-size: 24px;
-          font-weight: bold;
-          color: #333;
-        }
-      }
-    }
-  
-    .summary-cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      margin-bottom: 30px;
-  
-      .summary-card {
-        padding: 20px;
-        border-radius: 8px;
-        
-        &.total {
-          background: #e8f0fe;
-        }
-        
-        &.average {
-          background: #e6f4ea;
-        }
-  
-        .label {
-          font-size: 16px;
-          color: #666;
-          margin-bottom: 8px;
-        }
-  
-        .value {
-          font-size: 24px;
-          font-weight: bold;
-          color: #333;
-        }
-      }
-    }
-  
-    .chart-container {
-      height: 300px;
-      margin-bottom: 30px;
-  
-      canvas {
-        width: 100% !important;
-        height: 100% !important;
-      }
-    }
-  
-    .form-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 15px;
-      margin-bottom: 30px;
-  
-      input, select {
-        padding: 10px;
-        border: 1px solid #ddd;
-        border-radius: 4px;
-        font-size: 14px;
-        width: 100%;
-        
-        &:focus {
-          outline: none;
-          border-color: #4a90e2;
-        }
-      }
-  
-      button {
-        background: #4a90e2;
-        color: white;
-        border: none;
-        padding: 10px;
-        border-radius: 4px;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
-        font-size: 14px;
-        
-        &:hover {
-          background: #357abd;
-        }
-  
-        &:disabled {
-          background: #ccc;
-          cursor: not-allowed;
-        }
-  
-        i {
-          font-size: 18px;
-        }
-      }
-    }
-  
-    .expenses-list {
-      .expense-item {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 15px;
-        border: 1px solid #eee;
-        border-radius: 4px;
-        margin-bottom: 10px;
-        
-        &:hover {
-          background: #f8f9fa;
-        }
-  
-        .expense-info {
-          .description {
-            font-weight: 600;
-            color: #333;
-            margin-bottom: 4px;
-          }
-  
-          .meta {
-            font-size: 14px;
-            color: #666;
-          }
-        }
-  
-        .expense-actions {
-          display: flex;
-          align-items: center;
-          gap: 15px;
-  
-          .amount {
-            font-weight: 600;
-            color: #333;
-          }
-  
-          .delete-btn {
-            background: none;
-            border: none;
-            color: #dc3545;
-            cursor: pointer;
-            padding: 5px;
-            
-            &:hover {
-              background: #ffebee;
-              border-radius: 4px;
-            }
-  
-            i {
-              font-size: 18px;
-            }
-          }
-        }
-      }
-    }
-  }
+/* Wrapper do Sidebar */
+.sidebar-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 260px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+}
 
-  canvas {
-    width: 100%;
-    height: 400px;  /* Defina uma altura que se adeque ao seu layout */
-  }
-  // Responsive adjustments
-  @media (max-width: 768px) {
-    .expense-tracker {
-      .summary-cards {
-        grid-template-columns: 1fr;
-      }
-  
-      .form-container {
-        grid-template-columns: 1fr;
-      }
-    }
-  }
-  
+/* Estilos do Logo */
+.logo {
+  padding: 15px;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.logo-mini {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logo-image-small {
+  width: 35px;
+  height: 35px;
+}
+
+.logo-image-small img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.logo-normal {
+  display: block;
+  text-decoration: none;
+  color: #333333;
+  font-size: 18px;
+  font-weight: 500;
+  margin-top: 10px;
+}
+
+/* Estilos da Navegação */
+.nav {
+  list-style: none;
+  padding: 0;
+  margin: 15px 0;
+}
+
+.nav li {
+  margin: 0;
+  padding: 0;
+}
+
+.nav li a {
+  display: flex;
+  align-items: center;
+  padding: 12px 15px;
+  color: #666666;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.nav li a:hover {
+  background-color: #f8f9fa;
+  color: #333333;
+}
+
+.nav li.active a {
+  background-color: #f8f9fa;
+  color: #333333;
+  font-weight: 500;
+}
+
+.nav li i {
+  margin-right: 10px;
+  font-size: 20px;
+}
+
+.nav li p {
+  margin: 0;
+  font-size: 14px;
+}

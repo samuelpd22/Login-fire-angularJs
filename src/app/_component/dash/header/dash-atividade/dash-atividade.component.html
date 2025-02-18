@@ -1,65 +1,21 @@
-<!-- expense-tracker.component.html -->
-<div class="expense-tracker">
-    <div class="card">
-      <div class="card-header">
-        <h2>Controle de Gastos</h2>
-      </div>
-      
-      <div class="summary-cards">
-        <div class="summary-card total">
-          <div class="label">Total de Gastos</div>
-          <div class="value">R$ {{ totalExpenses | number:'1.2-2' }}</div>
-        </div>
-        
-        <div class="summary-card average">
-          <div class="label">Média por Dia</div>
-          <div class="value">R$ {{ averageExpense | number:'1.2-2' }}</div>
-        </div>
-      </div>
-  
-      <div class="chart-container">
-        <!-- Para o gráfico, você precisará usar uma biblioteca como ng2-charts -->
-        <canvas id="myChart"></canvas>
 
-
+<div class="sidebar-wrapper">
+  <div class="logo">
+    <a href="http://www.creative-tim.com" class="simple-text logo-mini">
+      <div class="logo-image-small">
+        <img src="assets/img/angular2-logo.png">
       </div>
-  
-      <form [formGroup]="expenseForm" (ngSubmit)="addExpense()" class="form-container">
-        <input
-          type="text"
-          placeholder="Descrição"
-          formControlName="description"
-        />
-        <input
-          type="number"
-          placeholder="Valor"
-          formControlName="amount"
-        />
-        <select formControlName="category">
-          <option *ngFor="let cat of categories" [value]="cat">
-            {{ cat }}
-          </option>
-        </select>
-        <button type="submit" [disabled]="!expenseForm.valid">
-          <i class="icon-plus"></i> Adicionar
-        </button>
-      </form>
-  
-      <div class="expenses-list">
-        <div *ngFor="let expense of expenses" class="expense-item">
-          <div class="expense-info">
-            <div class="description">{{ expense.description }}</div>
-            <div class="meta">
-              {{ expense.category }} • {{ expense.date | date }}
-            </div>
-          </div>
-          <div class="expense-actions">
-            <span class="amount">R$ {{ expense.amount | number:'1.2-2' }}</span>
-            <button class="delete-btn" (click)="deleteExpense(expense.id)">
-              <i class="icon-trash"></i>
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
+    </a>
+    <a href="https://www.creative-tim.com" class="simple-text logo-normal">
+      Creative Tim
+    </a>
   </div>
+    <ul class="nav">
+        <li *ngFor="let menuItem of menuItems" routerLinkActive="active" class="{{menuItem.class}}">
+            <a >
+                <i class="nc-icon {{menuItem.icon}}"></i>
+                <p>{{menuItem.title}}</p>
+            </a>
+        </li>
+    </ul>
+</div>
