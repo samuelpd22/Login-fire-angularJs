@@ -24,7 +24,7 @@ export class LoginComponent {
   }
 
   onRegisterClick(){
-    this.router.navigate(['/registra']);
+    this.router.navigate(['/cadastra']);
   }
 
   errorMessage: string = ''
@@ -46,7 +46,7 @@ export class LoginComponent {
         this.axiosService.setAuthToken(response.data.token);
         localStorage.setItem('authToken', response.data.token);
 
-        Swal.fire('Sucesso!', 'Login efetuado com sucesso!', 'success'); 
+        Swal.fire('sucess', 'Login efetuado com sucesso!', 'success'); 
         setTimeout(() => {
           this.router.navigate(['/dash']);
         }, 2000); // 2 segundos de delay
