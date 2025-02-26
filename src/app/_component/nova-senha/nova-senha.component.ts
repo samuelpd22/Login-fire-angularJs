@@ -35,6 +35,9 @@ export class NovaSenhaComponent {
     }
     return true; 
   }
+  onLoginClick(){
+    this.router.navigate(['/login']);
+  }
 
 
   onRegister(input: any): void {

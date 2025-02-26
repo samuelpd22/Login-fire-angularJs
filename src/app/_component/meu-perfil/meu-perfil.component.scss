@@ -165,6 +165,9 @@
   
   .form-group {
     margin-bottom: 24px;
+    padding-right: 50px;
+    width: 70vw
+  
   }
   
   select.form-input {
@@ -214,6 +217,7 @@
     /* Reset do margin-bottom no grid */
     .form-group {
         margin-bottom: 0;
+        width: 200px;
     }
 
     /* Último elemento (botão) ocupa linha inteira */
